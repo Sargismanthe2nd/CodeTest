@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="./reset.css">
-    <link rel="./style.css">
+    <title>JS QUIZ</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+
+    <div class="topBar">
+        <div id="leaderboard">Leaderboard!</div>
+        <div id="timer">Time left:</div>
+    </div>
+
+    <div id="quizContainer">
+        <div class="quizQuestion">
+            <p id="question">Question</p>
+        </div>
+
+        <div id="answers" class="buttonContainer">
+            Answers
+        </div>
+
+        <button id="submitAnswer" class="button" onclick="submitAnswer()">
+            Send Answer
+        </button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,44 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: #222222;
+}
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#quizContainer {
+    margin: auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 2px solid crimson;
+    border-radius: 30px;
+    color:lightslategrey;
+    border-style: dotted;
+}
+.button {
+    padding: 10px;
+    color: crimson;
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #222222;
+}
+#leaderboard,
+#timer {
+    margin: 5px;
+    color: crimson;
+}
+
+#leaderboard {
+    left: 20%;
+    font-size: 20px;
+}
+
+#timer {
+    right: 100px;
+}
