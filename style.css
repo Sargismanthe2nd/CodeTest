@@ -1,8 +1,9 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    background-color: #222222;
+    background-color:#2a2a2a
 }
+
+
 .topBar {
     display: flex;
     justify-content: space-between;
@@ -10,35 +11,154 @@ body {
     padding: 10px;
 }
 
+.timerContainer {
+    border: 2px solid crimson;
+}
+
+.buttonContainer {
+    align-items: center;
+}
+
+#leaderboard {
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid crimson;
+    background-color: #222222;
+}
+
+#leaderboard:hover {
+    color: maroon;
+    cursor: pointer;
+}
+
 #quizContainer {
+    display: flex;
+    flex-direction: column;
     margin: auto;
+    text-align: center;
     padding: 20px;
-    max-width: 600px;
+    width: 60vw;
+    height: 20vw;
     border: 2px solid crimson;
     border-radius: 30px;
-    color:lightslategrey;
-    border-style: dotted;
+    color: crimson;
+    background-color: #0e0e0e;
+    align-items: center;
+
 }
-.button {
+
+#startButtonContainer {
+    display: flex;
+    width: 60px;
+    height: 40px;
+}
+
+#startButton {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: crimson;
+    background-color: #2a2a2a;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.quizQueAns {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    max-width: 30vw;
+    height: 20px;
+}
+
+.quizQuestion {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#question {
+    border: 2px solid crimson;
+    width: 30vw;
+    height: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 5px;
+
+}
+#answers {
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding: 10px;
+width: 250px;
+    height: 80px;
+}
+
+.answerButtons {
+    margin: 5px;
     padding: 10px;
     color: crimson;
     background-color: #2a2a2a;
     cursor: pointer;
+    
 }
+
+
+.button {
+    margin: 10px;
+    padding: 10px;
+    color: crimson;
+    background-color: #2a2a2a;
+    cursor: pointer;
+
+}
+
 .button:hover {
     background-color: #222222;
 }
+
 #leaderboard,
 #timer {
     margin: 5px;
     color: crimson;
 }
 
-#leaderboard {
+#leaderboardContainer {
+    justify-content: center;
     left: 20%;
-    font-size: 20px;
+    border: 2px solid crimson;
+    border-radius: 20px;
+    width: 50%px;
+    padding: 10px;
+}
+
+#leaderboardButton {
+    color: crimson;
+    background-color: #222222;
+}
+
+#leaderboardButton:hover {
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+
+#leaderboardSave {
+    border: 1px solid crimson;
+    background-color:#222222
+}
+#userInitials {
+    border: 1px solid crimson;
+    background-color:#222222
+
 }
 
 #timer {
     right: 100px;
+}
+
+.hidden {
+    display: none;
 }

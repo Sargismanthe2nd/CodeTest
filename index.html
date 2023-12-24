@@ -12,23 +12,36 @@
 <body>
 
     <div class="topBar">
-        <div id="leaderboard">Leaderboard!</div>
-        <div id="timer">Time left:</div>
+        <button id="leaderboardButton" onclick="leaderboard()">Leaderboard!</button>
+        <div class="timerContainer">
+            <div id="timer">Time: 60 seconds</div>
+        </div>
     </div>
 
     <div id="quizContainer">
-        <div class="quizQuestion">
-            <p id="question">Question</p>
+        <div id="startButtonContainer">
+            <button id="startButton" class="button" onclick="beginQuiz()">Start</button>
         </div>
+        <div class="quizQueAns">
+            <div class="quizQuestion">
+                <p id="question"></p>
+            </div>
 
-        <div id="answers" class="buttonContainer">
-            Answers
+            <div id="answers" class="buttonContainer">
+            </div>
         </div>
+        <div id="leaderboardContainer" class="hidden">
+            <h2>Leaderboard</h2>
+            <form id="userForm">
+                <label for="initials">Your Initials:</label>
+                <input id="userInitials" type="text" id="initials" required>
+                <input type="hidden" id="score">
+                <button id="leaderboardSave" type="submit">Save</button>
 
-        <button id="submitAnswer" class="button" onclick="submitAnswer()">
-            Send Answer
-        </button>
+            </form>
+        </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>
