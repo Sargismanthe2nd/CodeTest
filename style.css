@@ -13,8 +13,11 @@ body {
 
 .timerContainer {
     border: 2px solid crimson;
+    border-radius: 10px;
 }
-
+#timer {
+    right: 100px;
+}
 .buttonContainer {
     align-items: center;
 }
@@ -37,8 +40,8 @@ body {
     margin: auto;
     text-align: center;
     padding: 20px;
-    width: 60vw;
-    height: 20vw;
+    width: 60%;
+    max-height: 40vw;
     border: 2px solid crimson;
     border-radius: 30px;
     color: crimson;
@@ -58,11 +61,14 @@ body {
     align-items: center;
     text-align: center;
     color: crimson;
-    background-color: #2a2a2a;
+    background-color: #222222;
     cursor: pointer;
     margin: 10px;
     padding: 10px;
     font-weight: bold;
+}
+#startButton:hover {
+    background-color: #2a2a2a;
 }
 
 .quizQueAns {
@@ -92,16 +98,20 @@ body {
 display: flex;
 flex-direction: row;
 justify-content: center;
-padding: 10px;
+padding: 2px;
 }
 
 
 .answerButtons {
     margin: 5px;
-    padding: 10px;
+    padding: 2px;
     color: crimson;
     background-color: #2a2a2a;
     cursor: pointer;
+    width: 300px;
+    height: 80px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
     
 }
 
@@ -132,8 +142,13 @@ padding: 10px;
     border-radius: 20px;
     width: 50%px;
     padding: 10px;
+    background-color: #2a2a2a;
 }
 
+#userForm {}
+#scoreResult {
+    color: crimson;
+}
 #leaderboardButton {
     color: crimson;
     background-color: #222222;
@@ -145,18 +160,24 @@ padding: 10px;
 }
 
 #leaderboardSave {
+    color: crimson;
     border: 1px solid crimson;
-    background-color:#222222
+    background-color:#222222;
+    margin-right: 10px;
+    border-radius: 5px;
 }
 #userInitials {
     border: 1px solid crimson;
-    background-color:#222222
-
+    background-color:#222222;
+    border-radius: 5px;
+}
+#initialsLabel {
+    border: 1px solid crimson;
+    border-radius: 5px;
+    padding: 1px;
+    background-color: #222222;
 }
 
-#timer {
-    right: 100px;
-}
 
 .hidden {
     display: none;

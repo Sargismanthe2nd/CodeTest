@@ -61,8 +61,8 @@ function startTimer() {
 
 function endQuiz() {
     clearInterval(timerInterval); // Stop the timer
-    alert("Quiz completed! Your score is: " + score);
-    // You can add more logic here, such as displaying the final score or navigating to another page.
+    displayLeaderboard();
+    document.getElementById("scoreResult").textContent = "Your score is: " + score;
 }
 
 // Test questions, options, and correct answers.
@@ -92,21 +92,34 @@ const testQuestions = [
         options: ["Data Object Model", "Document Object Model", "Design Object Model", "Dynamic Object Model"],
         correctAnswer: "Document Object Model",
     },
-    {
-        question: "In JavaScript, what is a closure?",
-        options: ["A function that has no return statement", "A variable declared inside a function", "A combination of a function and the lexical environment within which that function was declared", "A loop that never ends"],
-        correctAnswer: "A combination of a function and the lexical environment within which that function was declared",
-    },
-    {
-        question: "What is the purpose of the 'JSON.stringify()' method in JavaScript?",
-        options: ["To parse a JSON string", "To convert a JavaScript object to a JSON string", "To extract a value from a JSON object", "To check if a variable is an array"],
-        correctAnswer: "To convert a JavaScript object to a JSON string",
-    },
+   
 ];
 
-function leaderboard() {
-    document.getElementById("leaderboardContainer").style.display = "block";
+function displayLeaderboard() {
+    const leaderboardContainer = document.getElementById("leaderboardContainer").style.display = "block";
+    leaderboardContainer.style.display = "block";
+
+    const savedScores = JSON.parse(localStorage.getItem("leaderboard")) || [];
+    const leaderboardList = document.getElementById("leaderboardList");
+
+    leaderboardList.innerHTML = "";
+
+    if (savedScores.length === 0) {
+        const noScoresMessage = document.createElement("li");
+        noScoresMessage.textContent = "No scores saved yet.";
+        leaderboardList.appendChild(noScoresMessage);
+    } else {
+        // Populate the leaderboard with saved scores
+        savedScores
+            .sort((a, b) => b.score - a.score) // Sort scores in descending order
+            .forEach((entry, index) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${index + 1}. ${entry.initials}: ${entry.score} points`;
+                leaderboardList.appendChild(listItem);
+            });
+    }
 }
+
 function startReshape() {
     document.getElementById("quizContainer").style.height = "50%";
 }
