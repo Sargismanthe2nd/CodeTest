@@ -2,7 +2,7 @@
 
 let currentQuestion = 0;
 let score = 0;
-let time = 60; // Initial time in seconds
+let time = 60; 
 let timerInterval;
 
 function beginQuiz() {
@@ -10,6 +10,7 @@ function beginQuiz() {
     showQuestion();
 }
 
+//puts out question while adjusting visibility of elements.
 function showQuestion() {
     document.getElementById("question").style.display = 'block';
     document.getElementById("startButton").style.display = 'none';
@@ -29,6 +30,7 @@ function showQuestion() {
     });
 }
 
+//scoring system
 function checkAnswer(userOption) {
     const currentQuestionData = testQuestions[currentQuestion];
 
@@ -60,15 +62,15 @@ function startTimer() {
         }
 
         time--;
-    }, 1000); // Update every 1000 milliseconds (1 second)
+    }, 1000); 
 }
 
 function endQuiz() {
-    clearInterval(timerInterval); // Stop the timer
+    clearInterval(timerInterval); 
     saveToLeaderboard();
 }
 
-// Test questions, options, and correct answers.
+//q&a
 const testQuestions = [
     {
         question: "What does JS mean?",
@@ -135,6 +137,7 @@ function showLeaderboard() {
     displayLeaderboard();
 }
 
+//leaderboard and score saver
 document.getElementById('userForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const initials = document.getElementById('userInitials').value.trim();
@@ -148,7 +151,7 @@ document.getElementById('userForm').addEventListener('submit', function (event) 
     displayLeaderboard();
     resetQuiz();
 });
-
+//displays the leaderboard and makes it competitive. 
 function displayLeaderboard() {
     const leaderboardContainer = document.getElementById("leaderboardContainer");
     leaderboardContainer.style.display = "block";
