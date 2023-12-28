@@ -1,6 +1,6 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color:#2a2a2a
+    background-color: #2a2a2a;
 }
 
 
@@ -9,15 +9,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    border: 0 solid transparent;
+    border-radius: 10px;
+    background-color: #0e0e0e;
 }
 
-.timerContainer {
-    border: 2px solid crimson;
-    border-radius: 10px;
-}
-#timer {
-    right: 100px;
-}
+
+
 .buttonContainer {
     align-items: center;
 }
@@ -27,6 +25,9 @@ body {
     font-weight: bold;
     border: 1px solid crimson;
     background-color: #222222;
+    padding: 10px;
+    color: crimson;
+    border-radius: 10px;
 }
 
 #leaderboard:hover {
@@ -37,12 +38,12 @@ body {
 #quizContainer {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 10px auto;
     text-align: center;
     padding: 20px;
     width: 60%;
-    max-height: 40vw;
-    border: 2px solid crimson;
+    height: 20vw;
+    border: 0 solid crimson;
     border-radius: 30px;
     color: crimson;
     background-color: #0e0e0e;
@@ -50,23 +51,22 @@ body {
 
 }
 
-#startButtonContainer {
+#quizContent {
     display: flex;
-    width: 60px;
-    height: 40px;
+    flex-direction: column;
 }
 
 #startButton {
-    display: flex;
-    align-items: center;
     text-align: center;
     color: crimson;
     background-color: #222222;
     cursor: pointer;
-    margin: 10px;
-    padding: 10px;
     font-weight: bold;
+    height: fit-content;
+    border: 0 solid transparent;
+    border-radius: 10px;
 }
+
 #startButton:hover {
     background-color: #2a2a2a;
 }
@@ -92,13 +92,14 @@ body {
     border-radius: 20px;
     padding: 5px;
     margin: 5px;
-
+    display: none;
 }
+
+
 #answers {
-display: flex;
-flex-direction: row;
-justify-content: center;
-padding: 2px;
+    display: flex;
+    flex-direction:row;
+    padding: 2px;
 }
 
 
@@ -108,16 +109,16 @@ padding: 2px;
     color: crimson;
     background-color: #2a2a2a;
     cursor: pointer;
-    width: 300px;
-    height: 80px;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
-    
+    text-align: center;
+    height: 80px;
+    width: 100px;
+    border-radius: 10px;
 }
 
 
 .button {
-    margin: 10px;
     padding: 10px;
     color: crimson;
     background-color: #2a2a2a;
@@ -129,28 +130,39 @@ padding: 2px;
     background-color: #222222;
 }
 
-#leaderboard,
+
+
 #timer {
-    margin: 5px;
+    padding: 10px;
     color: crimson;
+    background-color: #222222;
+    border: 0 solid transparent;
+    border-radius: 10px;
 }
 
 #leaderboardContainer {
     justify-content: center;
-    left: 20%;
     border: 2px solid crimson;
     border-radius: 20px;
-    width: 50%px;
+    width: 40vw;
     padding: 10px;
     background-color: #2a2a2a;
+    margin: 10px auto;
 }
 
-#userForm {}
+#input-userInitials {
+    color: crimson;
+}
+
 #scoreResult {
     color: crimson;
 }
+
 #leaderboardButton {
+    padding: 10px;
     color: crimson;
+    border: 0 solid transparent;
+    border-radius: 10px;
     background-color: #222222;
 }
 
@@ -162,15 +174,18 @@ padding: 2px;
 #leaderboardSave {
     color: crimson;
     border: 1px solid crimson;
-    background-color:#222222;
+    background-color: #222222;
     margin-right: 10px;
     border-radius: 5px;
 }
+
 #userInitials {
     border: 1px solid crimson;
-    background-color:#222222;
+    background-color: #222222;
     border-radius: 5px;
+    color: crimson;
 }
+
 #initialsLabel {
     border: 1px solid crimson;
     border-radius: 5px;

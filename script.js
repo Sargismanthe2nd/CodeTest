@@ -8,10 +8,12 @@ let timerInterval;
 function beginQuiz() {
     startTimer();
     showQuestion();
-    quizReshape();
 }
 
 function showQuestion() {
+    document.getElementById("question").style.display = 'block';
+    document.getElementById("startButton").style.display = 'none';
+
     const currentQuestionData = testQuestions[currentQuestion];
     document.getElementById("question").textContent = currentQuestionData.question;
 
@@ -35,7 +37,7 @@ function checkAnswer(userOption) {
         score++;
     } else {
         ("Incorrect :(");
-        time -= 10;
+        time -= 5;
     }
 
     currentQuestion++;
@@ -49,7 +51,7 @@ function checkAnswer(userOption) {
 
 function startTimer() {
     timerInterval = setInterval(function () {
-        document.getElementById("timer").textContent = "Time left: " + time + " seconds";
+        document.getElementById("timer").textContent = "Time: " + time + " seconds";
 
         if (time <= 0) {
             endQuiz();
@@ -61,8 +63,7 @@ function startTimer() {
 
 function endQuiz() {
     clearInterval(timerInterval); // Stop the timer
-    displayLeaderboard();
-    document.getElementById("scoreResult").textContent = "Your score is: " + score;
+    saveToLeaderboard();
 }
 
 // Test questions, options, and correct answers.
@@ -92,12 +93,21 @@ const testQuestions = [
         options: ["Data Object Model", "Document Object Model", "Design Object Model", "Dynamic Object Model"],
         correctAnswer: "Document Object Model",
     },
-   
+
 ];
 
-function displayLeaderboard() {
-    const leaderboardContainer = document.getElementById("leaderboardContainer").style.display = "block";
+function saveToLeaderboard() {
+    document.getElementById("quizContent").style.display = 'none';
+
+    const leaderboardContainer = document.getElementById("leaderboardContainer");
     leaderboardContainer.style.display = "block";
+
+
+    const scoreElement = document.getElementById("scoreResult");
+    const finalScore = score;
+    scoreResult.textContent = "Your Score: " + score;
+
+
 
     const savedScores = JSON.parse(localStorage.getItem("leaderboard")) || [];
     const leaderboardList = document.getElementById("leaderboardList");
@@ -120,6 +130,6 @@ function displayLeaderboard() {
     }
 }
 
-function startReshape() {
-    document.getElementById("quizContainer").style.height = "50%";
+function showLeaderboard() {
+
 }
