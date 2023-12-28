@@ -14,6 +14,7 @@
 
     <div class="topBar">
         <button id="leaderboardButton" onclick="showLeaderboard()">Leaderboard</button>
+        <div id="currentScore"></div>
         <div id="timer">Time: 60 seconds</div>
     </div>
 
@@ -28,19 +29,22 @@
                 <div id="answers" class="buttonContainer">
                 </div>
             </div>
-            <button id="startButton" class="button" onclick="beginQuiz()">Start</button>
+            <button id="startButton" class="button" onclick="beginQuiz()">This is a timed quiz and incorrect answers will deduct time. Click here to begin!</button>
 
         </div>
         <div id="leaderboardContainer" class="hidden">
+            <p id="leaderboardList"></p>
             <h2>Your results:</h2>
-            <h4 id="scoreResult">a</h4>
+            <h4 id="scoreResult"></h4>
             <form id="userForm">
                 <label id="initialsLabel" for="initials">Your Initials:</label>
-                <input id="userInitials" type="text" id="initials" required>
+                <input id="userInitials" type="text" id="" required>
                 <input type="hidden" id="score">
                 <button id="leaderboardSave" type="submit">Save</button>
 
             </form>
+            <button id="clearScoresButton" onclick="clearScores()">Clear Scores</button>
+
         </div>
     </div>
 

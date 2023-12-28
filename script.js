@@ -33,10 +33,12 @@ function checkAnswer(userOption) {
     const currentQuestionData = testQuestions[currentQuestion];
 
     if (userOption === currentQuestionData.correctAnswer) {
-        ("Correct!!");
         score++;
+        let currentScore = score 
+        document.getElementById("currentScore").textContent = "Your score: " + currentScore
+
     } else {
-        ("Incorrect :(");
+        window.alert("wrong -5 seconds")
         time -= 5;
     }
 
@@ -119,9 +121,8 @@ function saveToLeaderboard() {
         noScoresMessage.textContent = "No scores saved yet.";
         leaderboardList.appendChild(noScoresMessage);
     } else {
-        // Populate the leaderboard with saved scores
         savedScores
-            .sort((a, b) => b.score - a.score) // Sort scores in descending order
+            .sort((a, b) => b.score - a.score)
             .forEach((entry, index) => {
                 const listItem = document.createElement("li");
                 listItem.textContent = `${index + 1}. ${entry.initials}: ${entry.score} points`;
@@ -131,5 +132,53 @@ function saveToLeaderboard() {
 }
 
 function showLeaderboard() {
+    displayLeaderboard();
+}
 
+document.getElementById('userForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const initials = document.getElementById('userInitials').value.trim();
+    if (initials === '') {
+        alert('Please enter your initials.');
+        return;
+    }
+    const savedScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    savedScores.push({ initials: initials, score: score });
+    localStorage.setItem('leaderboard', JSON.stringify(savedScores));
+    displayLeaderboard();
+    resetQuiz();
+});
+
+function displayLeaderboard() {
+    const leaderboardContainer = document.getElementById("leaderboardContainer");
+    leaderboardContainer.style.display = "block";
+
+    const savedScores = JSON.parse(localStorage.getItem("leaderboard")) || [];
+    const leaderboardList = document.getElementById("leaderboardList");
+
+    leaderboardList.innerHTML = "";
+
+    if (savedScores.length === 0) {
+        leaderboardList.innerHTML = "<li>No scores saved yet.</li>";
+    } else {
+        savedScores.sort((a, b) => b.score - a.score);
+        savedScores.forEach((entry, index) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${index + 1}. ${entry.initials}: ${entry.score} points`;
+            leaderboardList.appendChild(listItem);
+        });
+    }
+}
+
+function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    time = 60;
+    document.getElementById("question").style.display = 'none';
+    document.getElementById("startButton").style.display = 'block';
+}
+
+function clearScores() {
+    localStorage.removeItem('leaderboard');
+    displayLeaderboard();
 }

@@ -1,38 +1,26 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #2a2a2a;
+    background-color: black;
 }
 
+.hidden {
+    display: none;
+}
 
 .topBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border: 0 solid transparent;
     border-radius: 10px;
-    background-color: #0e0e0e;
+    background-color: #1a1a1a;
 }
 
-
-
-.buttonContainer {
-    align-items: center;
-}
-
-#leaderboard {
-    font-size: 10px;
-    font-weight: bold;
-    border: 1px solid crimson;
-    background-color: #222222;
+#timer {
     padding: 10px;
     color: crimson;
+    background-color: #222222;
     border-radius: 10px;
-}
-
-#leaderboard:hover {
-    color: maroon;
-    cursor: pointer;
 }
 
 #quizContainer {
@@ -43,32 +31,15 @@ body {
     padding: 20px;
     width: 60%;
     height: 20vw;
-    border: 0 solid crimson;
     border-radius: 30px;
     color: crimson;
-    background-color: #0e0e0e;
+    background-color: #1a1a1a;
     align-items: center;
-
 }
 
 #quizContent {
     display: flex;
     flex-direction: column;
-}
-
-#startButton {
-    text-align: center;
-    color: crimson;
-    background-color: #222222;
-    cursor: pointer;
-    font-weight: bold;
-    height: fit-content;
-    border: 0 solid transparent;
-    border-radius: 10px;
-}
-
-#startButton:hover {
-    background-color: #2a2a2a;
 }
 
 .quizQueAns {
@@ -77,7 +48,6 @@ body {
     margin: 10px;
     padding: 10px;
     max-width: 30vw;
-    height: 20px;
 }
 
 .quizQuestion {
@@ -95,48 +65,46 @@ body {
     display: none;
 }
 
-
 #answers {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     padding: 2px;
 }
-
-
-.answerButtons {
-    margin: 5px;
-    padding: 2px;
-    color: crimson;
-    background-color: #2a2a2a;
-    cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    text-align: center;
-    height: 80px;
-    width: 100px;
-    border-radius: 10px;
-}
-
 
 .button {
     padding: 10px;
     color: crimson;
     background-color: #2a2a2a;
     cursor: pointer;
-
 }
 
-.button:hover {
+.button:hover,
+#startButton:hover,
+#leaderboardButton:hover,
+#leaderboardSave:hover {
     background-color: #222222;
 }
 
-
-
-#timer {
-    padding: 10px;
+#startButton, 
+#leaderboardButton, 
+#leaderboardSave {
+    text-align: center;
     color: crimson;
     background-color: #222222;
-    border: 0 solid transparent;
+    cursor: pointer;
+    font-weight: bold;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.answerButtons {
+    margin: 5px;
+    padding: 2px;
+    color: crimson;
+    background-color: #2a2a2a;
+    text-align: center;
+    height: 80px;
+    width: 100px;
     border-radius: 10px;
 }
 
@@ -146,54 +114,43 @@ body {
     border-radius: 20px;
     width: 40vw;
     padding: 10px;
-    background-color: #2a2a2a;
+    background-color: #1a1a1a;
     margin: 10px auto;
 }
 
-#input-userInitials {
-    color: crimson;
+#leaderboardList {
+    list-style-type: none;
+    padding-left: 0;
 }
 
-#scoreResult {
+#clearScoresButton{
     color: crimson;
-}
-
-#leaderboardButton {
-    padding: 10px;
-    color: crimson;
-    border: 0 solid transparent;
+    border: 2px solid crimson;
     border-radius: 10px;
-    background-color: #222222;
+    background-color: #1a1a1a;
 }
-
-#leaderboardButton:hover {
-    background-color: #2a2a2a;
-    cursor: pointer;
-}
-
-#leaderboardSave {
+#currentScore {
+    padding: 5px;
     color: crimson;
-    border: 1px solid crimson;
-    background-color: #222222;
-    margin-right: 10px;
-    border-radius: 5px;
+    border: 4px solid crimson;
+    border-radius: 40px;
+    border-style: double;
+}
+#scoreResult,
+#input-userInitials,
+#userInitials,
+#initialsLabel, {
+    color: crimson;
 }
 
 #userInitials {
     border: 1px solid crimson;
     background-color: #222222;
     border-radius: 5px;
-    color: crimson;
+    color: #919191;
 }
-
-#initialsLabel {
+#initialsLabel, {
     border: 1px solid crimson;
-    border-radius: 5px;
-    padding: 1px;
     background-color: #222222;
-}
-
-
-.hidden {
-    display: none;
+    border-radius: 5px;
 }
