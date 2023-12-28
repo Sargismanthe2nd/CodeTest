@@ -1,1 +1,1 @@
-In this challenge, my goal is to create a quiz on JavaScript with JavaScript that allows you to save your score and have a sense of urgency from a timer.
+In this app, my goal was to create a quiz based on the fundamental information of javascript. It needed to have a timer, whose time would get deducted whenever the user inccorectly answers a question. Questions and answers that included javascript information. The ability to view a local leaderboard of saved scores from previous quiz attempts. As well as the option to clear said saved scores. 
